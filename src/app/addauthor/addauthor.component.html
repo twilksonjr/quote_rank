@@ -1,0 +1,9 @@
+<a class="btn-box btn blue" [routerLink]="['/author']">Home</a>
+<h3>Add a new quotable author:</h3>
+<form class="subcontainer" (submit)="createAuthor()" method="post">
+    <label>Name
+        <p *ngIf="name.errors" class="error">Something wrong here</p>
+        <input type="text" name="name" [(ngModel)]="author.name" required minlength="3" #name="ngModel">
+        <input class="btn green" type="submit" value="Submit">
+    </label>
+</form>

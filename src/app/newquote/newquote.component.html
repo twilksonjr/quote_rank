@@ -1,0 +1,9 @@
+<a class="btn-box btn blue" [routerLink]="['/author']">Home</a>
+<h3>Provide a quote by {{author}}</h3>
+<form class="subcontainer" (submit)="createQuote()" method="post">
+    <label>Quote
+        <p *ngIf="content.errors" class="error">Need a longer quote</p>
+        <input type="text" name="content" [(ngModel)]="quote.content" required minlength="10" #content="ngModel">
+    </label>
+    <input class="btn green" type="submit" value="Submit">
+</form>
